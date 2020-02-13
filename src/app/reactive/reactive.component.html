@@ -1,0 +1,83 @@
+<form [formGroup]="form" (submit)="onSubmit()" class="form-reactive">
+  <mat-form-field>
+    <mat-label>First name</mat-label>
+    <input formControlName="firstName"  matInput>
+    <mat-error *ngIf="this.form.controls.firstName.errors?.required">
+      This field is required
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Last name</mat-label>
+    <input formControlName="lastName" matInput>
+    <mat-error *ngIf="this.form.controls.lastName.errors?.required">
+      This field is required
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>User name</mat-label>
+    <input formControlName="userName" matInput>
+    <mat-error *ngIf="this.form.controls.userName.errors?.required">
+      This field is required
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input formControlName="email" matInput>
+    <mat-error *ngIf="this.form.controls.email.errors?.required">
+      This field is required
+    </mat-error>
+    <mat-error *ngIf="this.form.controls.email.errors?.email">
+      You must enter email
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Password</mat-label>
+    <input formControlName="password" matInput>
+    <mat-error *ngIf="this.form.controls.password.errors?.required">
+      This field is required
+    </mat-error>
+    <mat-error *ngIf="this.form.controls.password.errors?.minlength">
+      Password must be longer than 10 symbols
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Repeat Password</mat-label>
+    <input formControlName="repeatedPassword" matInput>
+    <mat-error *ngIf="this.form.controls.repeatedPassword.errors?.required">
+      This field is required
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Region</mat-label>
+    <mat-select formControlName="region">
+      <mat-option value="option">1</mat-option>
+      <mat-option value="option">2</mat-option>
+      <mat-option value="option">3</mat-option>
+    </mat-select>
+    <mat-error *ngIf="this.form.controls.region.errors?.required">
+      This field is required
+    </mat-error>
+  </mat-form-field>
+
+  <mat-radio-group formControlName="gender" aria-label="Select an option">
+    <mat-radio-button value="Male">Male</mat-radio-button>
+    <mat-radio-button value="Female">Female</mat-radio-button>
+    <mat-radio-button value="Don`t sure">¯\_(ツ)_/¯</mat-radio-button>
+  </mat-radio-group>
+
+  <mat-checkbox formControlName="promo">Send me promotional!</mat-checkbox>
+
+  <mat-form-field>
+    <mat-label>Additional</mat-label>
+    <textarea formControlName="additional" matInput></textarea>
+  </mat-form-field>
+
+  <button type="submit"  mat-button>SUBMIT</button>
+</form>
+
