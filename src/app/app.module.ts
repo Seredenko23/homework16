@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveModule } from './reactive/reactive.module';
+import {TemplateDrivenModule} from './template-driven/template-driven.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { ReactiveModule } from './reactive/reactive.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    ReactiveModule
+    ReactiveModule,
+    TemplateDrivenModule
   ],
   providers: [],
   bootstrap: [AppComponent]

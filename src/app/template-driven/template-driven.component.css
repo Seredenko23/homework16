@@ -1,0 +1,14 @@
+.form-reactive {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}
+
+.mat-checkbox {
+  margin: 15px;
+}

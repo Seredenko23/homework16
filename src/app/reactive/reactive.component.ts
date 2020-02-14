@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {from} from 'rxjs';
 
 @Component({
   selector: 'app-reactive',
@@ -23,9 +22,9 @@ export class ReactiveComponent implements OnInit {
 
   initForm() {
     this.form = this.fb.group({
-      firstName: ['', [Validators.required]],
-      lastName: ['', [Validators.required]],
-      userName: ['', [Validators.required]],
+      firstName: ['', [Validators.required, Validators.pattern('^[0-9a-zA-Z]+$')]],
+      lastName: ['', [Validators.required, Validators.pattern('^[0-9a-zA-Z]+$')]],
+      userName: ['', [Validators.required, Validators.pattern('^[0-9a-zA-Z]+$')]],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(10)]],
       repeatedPassword: ['', [Validators.required]],

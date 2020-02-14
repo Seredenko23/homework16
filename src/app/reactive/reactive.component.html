@@ -78,6 +78,5 @@
     <textarea formControlName="additional" matInput></textarea>
   </mat-form-field>
 
-  <button type="submit"  mat-button>SUBMIT</button>
+  <button type="submit" [disabled]="this.form.invalid" mat-button>SUBMIT</button>
 </form>
-
