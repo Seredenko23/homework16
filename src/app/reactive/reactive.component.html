@@ -5,6 +5,9 @@
     <mat-error *ngIf="this.form.controls.firstName.errors?.required">
       This field is required
     </mat-error>
+    <mat-error *ngIf="this.form.controls.firstName.errors?.pattern">
+      Symbols aren`t allowed
+    </mat-error>
   </mat-form-field>
 
   <mat-form-field>
@@ -13,6 +16,9 @@
     <mat-error *ngIf="this.form.controls.lastName.errors?.required">
       This field is required
     </mat-error>
+    <mat-error *ngIf="this.form.controls.firstName.errors?.pattern">
+      Symbols aren`t allowed
+    </mat-error>
   </mat-form-field>
 
   <mat-form-field>
@@ -20,6 +26,9 @@
     <input formControlName="userName" matInput>
     <mat-error *ngIf="this.form.controls.userName.errors?.required">
       This field is required
+    </mat-error>
+    <mat-error *ngIf="this.form.controls.userName.errors?.pattern">
+      Symbols aren`t allowed
     </mat-error>
   </mat-form-field>
 
@@ -47,9 +56,9 @@
 
   <mat-form-field>
     <mat-label>Repeat Password</mat-label>
-    <input formControlName="repeatedPassword" matInput>
-    <mat-error *ngIf="this.form.controls.repeatedPassword.errors?.required">
-      This field is required
+    <input formControlName="repeatedPassword" [errorStateMatcher]="matcher"  matInput>
+    <mat-error *ngIf="this.form.errors?.notSame">
+      Passwords aren`t same
     </mat-error>
   </mat-form-field>
 

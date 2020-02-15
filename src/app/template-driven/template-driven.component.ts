@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {User} from './model/User';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-template-driven',
@@ -7,6 +8,7 @@ import {User} from './model/User';
   styleUrls: ['./template-driven.component.css']
 })
 export class TemplateDrivenComponent {
+  @ViewChild('form', null) form: NgForm;
 
   model: User = {
     firstName: '',
@@ -22,8 +24,9 @@ export class TemplateDrivenComponent {
   };
 
   onSubmit() {
-    console.log(this.model);
+    console.log(this.form.value);
   }
+
   constructor() { }
 
 }

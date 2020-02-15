@@ -1,4 +1,4 @@
-<form (submit)="onSubmit()" class="form-reactive">
+<form (submit)="onSubmit()" #form="ngForm" class="form-reactive">
   <mat-form-field>
     <mat-label>First name</mat-label>
     <input [(ngModel)]="model.firstName"
@@ -78,10 +78,14 @@
     <mat-label>Repeat Password</mat-label>
     <input [(ngModel)]="model.repeatedPassword"
            required
+           pattern="{{password.value}}"
            #repeatedPassword='ngModel'
            name="repeatedPassword" matInput>
     <mat-error *ngIf="repeatedPassword.errors?.required">
       This field is required
+    </mat-error>
+    <mat-error *ngIf="repeatedPassword.errors?.pattern">
+      Passwords aren`t same
     </mat-error>
   </mat-form-field>
 
@@ -120,5 +124,5 @@
     </textarea>
   </mat-form-field>
 
-  <button type="submit" mat-button>SUBMIT</button>
+  <button type="submit" [disabled]='form.invalid' mat-button>SUBMIT</button>
 </form>
