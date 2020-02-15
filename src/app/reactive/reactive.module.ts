@@ -27,7 +27,6 @@ import {ReactiveFormsModule} from '@angular/forms';
     MatRadioModule,
     MatCheckboxModule,
     ReactiveFormsModule,
-    MatButtonModule,
   ],
   exports: [ReactiveComponent],
   bootstrap: []

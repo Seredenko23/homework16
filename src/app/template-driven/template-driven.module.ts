@@ -20,7 +20,6 @@ import {ReactiveComponent} from '../reactive/reactive.component';
   ],
   imports: [
     BrowserModule,
-    MatButtonModule,
     MatInputModule,
     MatFormFieldModule,
     MatOptionModule,
