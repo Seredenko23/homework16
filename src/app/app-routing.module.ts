@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {ReactiveComponent} from './reactive/reactive.component';
-import {TemplateDrivenComponent} from './template-driven/template-driven.component';
+
 
 const routes: Routes = [
-  { path: 'reactive-form', component: ReactiveComponent},
-  { path: 'template-driven-form', component: TemplateDrivenComponent}
+  {
+    path: 'reactive-form',
+    loadChildren: () => import('./reactive/reactive.module').then(m => m.ReactiveModule)
+  },
+  {
+    path: 'template-driven-form',
+    loadChildren: () => import('./template-driven/template-driven.module').then(m => m.TemplateDrivenModule)
+  }
 ];
 
 @NgModule({

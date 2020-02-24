@@ -1,4 +1,3 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {
   MatButtonModule,
@@ -6,11 +5,13 @@ import {
   MatFormFieldModule,
   MatInputModule,
   MatSelectModule,
-  MatRadioGroup,
-  MatRadioModule, MatCheckboxModule
+  MatRadioModule,
+  MatCheckboxModule
 } from '@angular/material';
 import { ReactiveComponent } from './reactive.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import {CommonModule} from '@angular/common';
+import { ReactiveRoutingModule } from './reactive-routing.module';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     ReactiveComponent
   ],
   imports: [
-    BrowserModule,
+    CommonModule,
+    ReactiveRoutingModule,
     MatButtonModule,
     MatInputModule,
     MatFormFieldModule,

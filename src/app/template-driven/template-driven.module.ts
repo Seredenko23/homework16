@@ -1,4 +1,3 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {
   MatButtonModule,
@@ -11,15 +10,15 @@ import {
 } from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {TemplateDrivenComponent} from './template-driven.component';
-import {ReactiveComponent} from '../reactive/reactive.component';
-
+import {CommonModule} from '@angular/common';
+import { TemplateDrivenRoutingModule } from './template-driven-routing.module';
 
 @NgModule({
   declarations: [
     TemplateDrivenComponent
   ],
   imports: [
-    BrowserModule,
+    CommonModule ,
     MatInputModule,
     MatFormFieldModule,
     MatOptionModule,
@@ -29,6 +28,7 @@ import {ReactiveComponent} from '../reactive/reactive.component';
     ReactiveFormsModule,
     MatButtonModule,
     FormsModule,
+    TemplateDrivenRoutingModule
   ],
   exports: [ TemplateDrivenComponent ],
   bootstrap: []
